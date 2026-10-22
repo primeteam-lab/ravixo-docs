@@ -1,0 +1,131 @@
+---
+title: "17. RVX Miner Community Arcade"
+---
+
+RVX Miner is a playable community arcade prototype built around short mining rounds, persistent progression and verified competition. Its purpose is to give the RAVIXO community an accessible activity alongside market research, demo trading and learning. Arcade points and achievements are recorded separately from Earned RVX Allocations and on-chain RVX.
+
+The prototype can be tested independently. Integration with RVX ID, game-related referral attribution and funded payouts has not yet been implemented. Availability in the main RAVIXO application will be identified separately.
+
+## 17.1. The Core Game Loop
+
+Players choose an unlocked stage, one character and one tool, then enter a round lasting at most 60 seconds. The hook swings automatically; the player chooses when to release it. There is no aiming guide or automatic targeting. Rocks, bombs and selected objective items move to create timing challenges.
+
+Only items delivered to the surface count toward resources and objectives. Touching an item or carrying it when time expires does not complete a collection. A bomb normally removes three seconds and drops the carried item back into the mine. Required objective items are not permanently removed by an explosion.
+
+Stages end when their delivery objective is completed or time runs out. Treasure objectives require two distinct keys to be delivered before the gift or treasure wagon can be brought to the surface. Delivered resources remain recorded after an unsuccessful attempt.
+
+## 17.2. Campaign Map and Play Modes
+
+The current campaign contains three chapters, 18 regions and 180 sequential stages, with up to 540 stars. Each region presents a winding trail of ten stage nodes. Objectives include Mine RVX collectibles, gems, ore containing parts, keys, a moving rescue drone and a moving treasure wagon.
+
+| Chapter | Stages | Progression focus |
+| --- | --- | --- |
+| Discovery | 1-60 | Introduces timing and collection before combining objectives |
+| Depths | 61-120 | Adds drifting RVX collectibles and more combined objectives |
+| Legends | 121-180 | Uses harder combinations and a second moving gate for the final wagon |
+
+Clearing a stage opens the next stage in its region. Opening the next region requires at least 18 of the previous region's 30 stars and completion of its final wagon stage. The map uses 30 objective templates across regional variants and server-generated layouts; the 180 stages are not 180 entirely different rule sets.
+
+Each successful objective earns one star. Avoiding all bombs adds a second; finishing with at least the displayed time remaining adds a third. Only the best stage result is retained for campaign stars. Replays can improve that result without repeating the first-clear reward.
+
+| Mode | Purpose | Current limit or rule |
+| --- | --- | --- |
+| Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds per round |
+| Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; cycles the stage catalogue with new layouts and bounded difficulty |
+| Practice | Learn timing and earn internal resources | Includes a one-time active-practice tutorial reward |
+| Hunt Demo | Deliver two keys and the gift | Three starts per account per day; at most one simulated USD gift per day while inventory is available |
+| Ranked | Compete using standardized equipment | Ten starts per day; the five best daily scores contribute to its weekly standings |
+
+Campaign, Endless Mine and Practice allow limited pausing. Hunt Demo and Ranked clocks continue when the player leaves the game view. Arcade day and week boundaries use UTC+7.
+
+## 17.3. Internal Resources and Milestones
+
+| Record | How it is earned | What it does |
+| --- | --- | --- |
+| Mine RVX | Delivered RVX collectibles, quests and eligible progression milestones | Unlocks and upgrades game equipment; it is not a wallet token |
+| Parts | Delivered ore containing parts and eligible milestone rewards | Pays equipment unlock and upgrade costs |
+| Mastery XP | Delivered items and completed objectives using the equipped character and tool | Qualifies that character and tool for later levels |
+| Stage stars | Objective completion, avoiding bombs and the displayed time threshold | Opens region gates and star chests |
+| Relics | First clears of fixed stages 2, 4, 7 and 10 in each region | Completes 18 collection sets containing 72 relic entries |
+| Season points and medals | Eligible Campaign and Endless victories | Unlocks current-season milestones and records long-term achievement |
+
+The base mining value is 10 Mine RVX per delivered RVX collectible. Equipment can improve internal earnings within a total 30% bonus cap. A delivered ore item containing a part awards one part. Mining, the tutorial and daily contracts share a daily allowance of 500 Mine RVX and three parts. Fixed first-clear, star-chest, completed-set, prestige, seasonal and weekly-race awards have separate allowances outside that mining cap.
+
+A first stage clear grants 20 Mine RVX; challenge stages 5 and 10 also grant one part. Region star chests at 6, 12, 18, 24 and 30 stars grant 40, 60, 80, 100 and 120 Mine RVX respectively, with 0, 1, 1, 1 and 2 parts. Completing a four-relic regional set grants 120 Mine RVX and two parts. These milestones are awarded once per eligible stage, chest or set.
+
+Gems contribute score or stage objectives. They are not withdrawable diamonds or a direct cash balance. Keys are round objectives, not stored currency. Existing profile XP and legacy collection records remain separate from character and tool mastery.
+
+## 17.4. Characters Tools and Upgrades
+
+Players can choose among six characters and six tools, producing 36 combinations. Characters support up to 20 levels and tools up to ten. Mira, Kade, Scout and Talon are initially available. Other items unlock with earned Mine RVX and parts.
+
+Each character and tool has an advantage and a persistent drawback. Roles include wider catching, faster pulling, ore handling, first-bomb protection, additional Mine RVX and slower swing timing. An upgrade improves the disclosed benefit within stat limits; it does not remove every trade-off.
+
+Level upgrades require both cumulative mastery XP and the listed resource cost. XP is not spent. As initial examples, character level 2 requires ten mastery XP and 35 Mine RVX; tool level 2 requires 12 mastery XP and 30 Mine RVX. Neither first upgrade requires a part. Mastery is credited to the character and tool equipped at round start, with a maximum of 30 XP for each per eligible round.
+
+| Workshop branch | Benefit per level | Five-level limit |
+| --- | --- | --- |
+| A Precision Hook | Catch radius increases by one pixel | Five additional pixels before the overall stat cap |
+| B Winch Motor | Pulling modifier increases by 2% | A 10% modifier before the overall stat cap |
+| C Bomb Guard | First-bomb time penalty falls by 0.2 seconds | One-second reduction before the overall protection cap |
+| D Mining Storage | Mine RVX earnings modifier increases by 2% | A 10% modifier before the overall earnings cap |
+
+The five successive branch levels cost 100, 200, 400, 700 and 1,100 Mine RVX, together with 1, 2, 3, 5 and 8 parts. Equipment is fixed when a round starts; changes affect the following round. Ranked play normalizes all character, tool and workshop stat benefits, while preserving appearance and mastery progression. Upgrades do not increase the USD value of a gift or a player's Hunt quota.
+
+## 17.5. Earned Prestige and Seasons
+
+Arcade prestige titles are earned through achievements. They are not purchased VIP memberships and do not activate platform fee tiers. Rewards include internal resources, profile frames, equipment presets and cosmetic hooks.
+
+| Title | Current requirement | One-time internal reward | Additional unlock |
+| --- | --- | --- | --- |
+| Bronze | Clear three distinct stages | 60 Mine RVX and one part | Bronze frame |
+| Silver | Complete the first region | 150 Mine RVX and two parts | Silver frame and a second equipment preset |
+| Gold | Complete the first three regions and level two characters to 10 | 300 Mine RVX and three parts | Gold frame and a third preset |
+| Diamond | Complete the six Discovery regions and level four characters to 15 | 600 Mine RVX and four parts | Diamond frame and a crystal hook appearance |
+| Legend | Earn 180 stars, level all six characters to 20 and earn three season medals | 1,000 Mine RVX and six parts | Legend frame and an astral hook appearance |
+
+The Legend threshold remains 180 stars even though the expanded map supports 540 stars. Completing a region means reaching 18 stars and clearing its final wagon. Cosmetic choices do not change gameplay stats or gift values.
+
+An arcade season lasts 28 days. Campaign and Endless victories award one to three season points according to stars, capped at 15 points per day. Current milestones at 10, 25 and 40 points grant 60, 100 and 200 Mine RVX, plus one, one and two parts. Reaching 40 points records a season medal. Equipment levels, relics, earned titles and medals persist when season points reset.
+
+## 17.6. Weekly Journey Race
+
+The Journey Race is separate from standardized Ranked play. It uses authenticated, server-confirmed Campaign results. For each player and stage, only the best eligible result of that week counts. Ranking compares total stars, distinct cleared stages, total spare seconds and the time at which those results were achieved.
+
+The week starts on Monday at 00:00 UTC+7. A round belongs to the week in which the server started it. Results must be confirmed before 00:05 the following Monday to affect that closed week. Guest play, the test room, unsuccessful rounds and other modes do not enter this leaderboard.
+
+| Weekly position | Mine RVX per player | Parts per player |
+| --- | --- | --- |
+| 1 | 250 | 3 |
+| 2-3 | 180 | 2 |
+| 4-10 | 100 | 1 |
+| 11-20 | 50 | 0 |
+
+These awards total at most 1,810 Mine RVX and 14 parts per week if all 20 positions qualify. Eligible players claim once during the following week after the confirmation cutoff. No USD or transferable RVX is credited by this race. Cash figures shown in the older Ranked prize illustration are not implemented settlement awards.
+
+## 17.7. Hunt Demo and Funded Campaign Boundaries
+
+The current Hunt inventory is a simulation. An authenticated start reserves an available server-side demo slot; a confirmed delivery awards it, while a failed round releases the slot. Starting consumes an attempt even if the player closes the page.
+
+| Simulated gift value | Daily inventory | Share of a full inventory |
+| --- | --- | --- |
+| USD 0.05 demo | 360 | 72% |
+| USD 0.10 demo | 90 | 18% |
+| USD 0.20 demo | 40 | 8% |
+| USD 0.50 demo | 10 | 2% |
+
+The 500 daily slots have a combined simulated face value of USD 40 and a full-inventory average of USD 0.08 per gift. Four waves of 125 slots open at 00:00, 06:00, 12:00 and 18:00 UTC+7. Actual selection uses the remaining available slots, so the mix can change as gifts are reserved or awarded.
+
+Only these four denominations are implemented. The displayed USD 0.05-0.50 range does not mean every intermediate cent value is available. The 2% figure is the initial share of USD 0.50 slots, not the probability of an easy round or of winning.
+
+Simulated USD is not funded, transferable or withdrawable. Mine RVX, parts, mastery, stars, relics and prestige have no automatic conversion into Earned RVX Allocations, transferable RVX, USD or stablecoins. A future funded Campaign requires its own reserved budget, eligible-user checks, reward schedule, inventory rules, settlement process and published claim terms before activation. The demonstration inventory does not establish a standing cash-payment commitment.
+
+## 17.8. Account Verification and Community Growth
+
+Guest progress and the quick test room are device-local demonstrations. Their sample resources and results cannot be imported into authenticated balances, community rankings or shared Hunt inventory. The test room is intended to preview progression and equipment rather than qualify for a reward program.
+
+The authenticated game server determines layouts, time, collisions, objectives, scores, equipment costs and awards. Duplicate settlement and duplicate milestone claims do not create a second award. These controls reduce forged-result abuse; they do not guarantee that automated valid inputs or multiple controlled accounts will always be detected.
+
+Optional invitation and community challenges are planned to connect arcade participation with RAVIXO onboarding. They require RVX ID and referral-attribution integration before activation. A future Campaign may recognize verified multi-day arcade activity under its published QAU criteria; the current prototype does not automatically establish QAU D7, Live qualification or a referral commission.
+
+The existing Referral and Creator framework continues to govern attribution and acquired-user awards. A single eligible acquisition must not be paid repeatedly through game invitations, Social Share and Creator attribution. Game participation alone does not generate collected Live platform fees. The current game does not require a referral to play, upgrade equipment or unlock its ordinary treasure objectives.
