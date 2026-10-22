@@ -2,9 +2,9 @@
 title: "17. RVX Miner Community Arcade"
 ---
 
-RVX Miner is a playable community arcade prototype built around short mining rounds, persistent progression and verified competition. Its purpose is to give the RAVIXO community an accessible activity alongside market research, demo trading and learning. Arcade points and achievements are recorded separately from Earned RVX Allocations and on-chain RVX.
+RVX Miner is a playable community arcade game built around short mining rounds, persistent progression and verified competition. Its purpose is to give the RAVIXO community an accessible activity alongside market research, demo trading and learning. Arcade points and achievements are recorded separately from Earned RVX Allocations and on-chain RVX.
 
-The prototype can be tested independently. Integration with RVX ID, game-related referral attribution and funded payouts has not yet been implemented. Availability in the main RAVIXO application will be identified separately.
+The game can be tested independently. Version 16 supports a separate ledger for real USD Hunt rewards and funded daily budget limits. RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Hunt opens only after a dated prize fund is allocated and its eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
 
 ## 17.1. The Core Game Loop
 
@@ -33,10 +33,10 @@ Each successful objective earns one star. Avoiding all bombs adds a second; fini
 | Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds per round |
 | Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; cycles the stage catalogue with new layouts and bounded difficulty |
 | Practice | Learn timing and earn internal resources | Includes a one-time active-practice tutorial reward |
-| Hunt Demo | Deliver two keys and the gift | Three starts per account per day; at most one simulated USD gift per day while inventory is available |
+| Hunt | Deliver two keys and the gift to earn real USD | Three starts per account per day; at most one USD gift per day while a funded campaign is open |
 | Ranked | Compete using standardized equipment | Ten starts per day; the five best daily scores contribute to its weekly standings |
 
-Campaign, Endless Mine and Practice allow limited pausing. Hunt Demo and Ranked clocks continue when the player leaves the game view. Arcade day and week boundaries use UTC+7.
+Campaign, Endless Mine and Practice allow limited pausing. Hunt and Ranked clocks continue when the player leaves the game view. Arcade day and week boundaries use UTC+7.
 
 ## 17.3. Internal Resources and Milestones
 
@@ -101,28 +101,47 @@ The week starts on Monday at 00:00 UTC+7. A round belongs to the week in which t
 | 4-10 | 100 | 1 |
 | 11-20 | 50 | 0 |
 
-These awards total at most 1,810 Mine RVX and 14 parts per week if all 20 positions qualify. Eligible players claim once during the following week after the confirmation cutoff. No USD or transferable RVX is credited by this race. Cash figures shown in the older Ranked prize illustration are not implemented settlement awards.
+These awards total at most 1,810 Mine RVX and 14 parts per week if all 20 positions qualify. Eligible players claim once during the following week after the confirmation cutoff. No USD or transferable RVX is credited by this race. Journey Race awards do not use the separate Hunt prize fund.
 
-## 17.7. Hunt Demo and Funded Campaign Boundaries
+## 17.7. Real USD rewards and funded campaign limits
 
-The current Hunt inventory is a simulation. An authenticated start reserves an available server-side demo slot; a confirmed delivery awards it, while a failed round releases the slot. Starting consumes an attempt even if the player closes the page.
+Hunt awards real USD from an allocated prize fund. To earn a gift, you must deliver two distinct keys in the same round, then bring the gift to the surface before the 60-second limit. Catching the gift or collecting the keys alone does not earn USD. Campaign, Endless Mine, Practice, Ranked, prestige titles and the Journey Race continue to award their disclosed internal resources, scores and achievements.
 
-| Simulated gift value | Daily inventory | Share of a full inventory |
-| --- | --- | --- |
-| USD 0.05 demo | 360 | 72% |
-| USD 0.10 demo | 90 | 18% |
-| USD 0.20 demo | 40 | 8% |
-| USD 0.50 demo | 10 | 2% |
+You have three Hunt starts per account per day and can earn at most one successful USD gift per day. A start consumes an attempt once the server accepts the round and reserves its funding. A failed round or a closed browser does not refund that attempt. A round crossing midnight uses the quota and prize fund of its start date, in UTC+7.
 
-The 500 daily slots have a combined simulated face value of USD 40 and a full-inventory average of USD 0.08 per gift. Four waves of 125 slots open at 00:00, 06:00, 12:00 and 18:00 UTC+7. Actual selection uses the remaining available slots, so the mix can change as gifts are reserved or awarded.
+### Gift values and probabilities
 
-Only these four denominations are implemented. The displayed USD 0.05-0.50 range does not mean every intermediate cent value is available. The 2% figure is the initial share of USD 0.50 slots, not the probability of an easy round or of winning.
+The server randomly selects any whole-cent amount from USD 0.05 through USD 0.50, inclusive. All 46 values are possible, including USD 0.07, USD 0.13 and USD 0.46. These are probability bands, not five fixed denominations.
 
-Simulated USD is not funded, transferable or withdrawable. Mine RVX, parts, mastery, stars, relics and prestige have no automatic conversion into Earned RVX Allocations, transferable RVX, USD or stablecoins. A future funded Campaign requires its own reserved budget, eligible-user checks, reward schedule, inventory rules, settlement process and published claim terms before activation. The demonstration inventory does not establish a standing cash-payment commitment.
+| Gift value range | Probability of the range |
+| --- | --- |
+| USD 0.05-0.10 | 90% |
+| USD 0.11-0.20 | 7% |
+| USD 0.21-0.30 | 2% |
+| USD 0.31-0.40 | 0.8% |
+| USD 0.41-0.50 | 0.2% |
+
+Each individual cent value within a band has equal probability. The individual USD 0.50 outcome therefore has a 0.02% probability. The theoretical mean is USD 0.0872 per successful gift. These percentages describe the value of an earned gift, not the probability of winning a round or receiving an easy layout. Character levels, tools, workshop upgrades, titles and referrals do not increase gift values or these probabilities.
+
+### Daily prize budget
+
+The initial planned prize allocation is USD 50 per day. RAVIXO can raise it to USD 100 per day after allocating the additional funds. The funded amount is a cap on prize obligations, not a fixed number of boxes or a promise that the full budget will be distributed each day. Payment-provider costs, if applicable, must be disclosed separately in the campaign terms.
+
+Four cumulative budget releases open at 00:00, 06:00, 12:00 and 18:00 UTC+7: 25%, 50%, 75% and 100% of that day's funded prize budget. Before accepting a Hunt, the server reserves the maximum possible gift of USD 0.50 and privately samples its value. A confirmed win records only that value as earned USD and releases the unused reservation. A loss releases the entire USD 0.50 reservation.
+
+A new Hunt does not start if its fund is unopened, closed or has less than USD 0.50 of released, uncommitted money available. A rejected start consumes no attempt. Existing accepted rounds settle against their original fund, and closing new entry does not cancel earned rewards. Reserving the maximum keeps all 46 gift values available at the stated probabilities; up to USD 0.49 may remain unused at the end of a day. Earned rewards plus active reservations cannot exceed the allocated budget.
+
+### Recording and payment
+
+A server-confirmed Hunt award is a real USD amount owed to the eligible player. The game records it in a separate reward ledger. The displayed total is cumulative USD earned; it does not by itself confirm a completed transfer or represent a current withdrawal balance. An award is marked paid only after an actual external payment is confirmed.
+
+Automatic external payment processing and linkage to RAVIXO payment destinations are not yet integrated. Before opening a funded campaign, RAVIXO must publish its eligibility checks, payment destination requirements, payment schedule, fees and claim terms. An unopened fund issues no USD awards. Legacy simulated USD balances remain separate and do not convert into real money.
+
+Mine RVX, parts, mastery, stars, relics and prestige retain their internal game uses. They have no automatic conversion into Earned RVX Allocations, transferable RVX, USD or stablecoins.
 
 ## 17.8. Account Verification and Community Growth
 
-Guest progress and the quick test room are device-local demonstrations. Their sample resources and results cannot be imported into authenticated balances, community rankings or shared Hunt inventory. The test room is intended to preview progression and equipment rather than qualify for a reward program.
+Guest progress and the quick test room are device-local demonstrations. Their sample resources and results cannot be imported into authenticated balances, community rankings or funded Hunt awards. Guests cannot enter real USD Hunt rounds. You must sign in and meet the campaign's published verification requirements to participate. The three-start and one-gift limits apply per account; verification across multiple controlled accounts requires RAVIXO identity integration. The test room previews progression and equipment without qualifying for a cash reward.
 
 The authenticated game server determines layouts, time, collisions, objectives, scores, equipment costs and awards. Duplicate settlement and duplicate milestone claims do not create a second award. These controls reduce forged-result abuse; they do not guarantee that automated valid inputs or multiple controlled accounts will always be detected.
 
