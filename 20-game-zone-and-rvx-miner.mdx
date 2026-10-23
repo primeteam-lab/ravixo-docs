@@ -4,7 +4,7 @@ title: "17. RVX Miner Community Arcade"
 
 RVX Miner is a playable community arcade game built around short mining rounds, persistent progression and verified competition. Its purpose is to give the RAVIXO community an accessible activity alongside market research, demo trading and learning. Arcade points and achievements are recorded separately from Earned RVX Allocations and on-chain RVX.
 
-The game can be tested independently. Version 16 supports a separate ledger for real USD Hunt rewards and funded daily budget limits. RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Hunt opens only after a dated prize fund is allocated and its eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
+The game can be tested independently. Version 17 supports a separate ledger for real USD Hunt rewards and funded daily budget limits, and lets you continue mining after completing a Campaign or Endless objective. RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Hunt opens only after a dated prize fund is allocated and its eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
 
 ## 17.1. The Core Game Loop
 
@@ -12,7 +12,11 @@ Players choose an unlocked stage, one character and one tool, then enter a round
 
 Only items delivered to the surface count toward resources and objectives. Touching an item or carrying it when time expires does not complete a collection. A bomb normally removes three seconds and drops the carried item back into the mine. Required objective items are not permanently removed by an explosion.
 
-Stages end when their delivery objective is completed or time runs out. Treasure objectives require two distinct keys to be delivered before the gift or treasure wagon can be brought to the surface. Delivered resources remain recorded after an unsuccessful attempt.
+In Campaign and Endless Mine, completing the delivery objective does not end your round. You can keep mining until the countdown reaches zero. Bomb penalties still reduce the remaining time, including after you complete the objective. The game records your first objective completion time for the speed star and awards the time bonus only once. Stars, stage unlocks and collected resources are confirmed when the round ends.
+
+For example, a stage requiring one Mine RVX collectible and one ore item remains playable after you deliver both. If 41 seconds remain, you can use that time to collect more resources.
+
+Treasure objectives require two distinct keys to be delivered before you can bring the gift or treasure wagon to the surface. In Practice, Hunt and Ranked, delivering the unlocked gift ends the round early; collecting ordinary Mine RVX does not. After an early gift delivery, the timer freezes at the actual remaining time instead of resetting to 00:00. Delivered resources remain recorded after an unsuccessful attempt.
 
 ## 17.2. Campaign Map and Play Modes
 
@@ -26,12 +30,12 @@ The current campaign contains three chapters, 18 regions and 180 sequential stag
 
 Clearing a stage opens the next stage in its region. Opening the next region requires at least 18 of the previous region's 30 stars and completion of its final wagon stage. The map uses 30 objective templates across regional variants and server-generated layouts; the 180 stages are not 180 entirely different rule sets.
 
-Each successful objective earns one star. Avoiding all bombs adds a second; finishing with at least the displayed time remaining adds a third. Only the best stage result is retained for campaign stars. Replays can improve that result without repeating the first-clear reward.
+Completing the objective earns one star. Avoiding all bombs throughout the entire round adds a second. Completing the objective for the first time with at least the displayed time remaining adds a third. Continuing to mine does not remove your speed star, but a later bomb hit removes eligibility for the no-bomb star. Only your best stage result is retained for campaign stars. Replays can improve that result without repeating the first-clear reward.
 
 | Mode | Purpose | Current limit or rule |
 | --- | --- | --- |
-| Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds per round |
-| Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; cycles the stage catalogue with new layouts and bounded difficulty |
+| Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds; keep mining after completing the objective |
+| Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; keep mining after completing the objective, with depth confirmed at round end; cycles the stage catalogue with new layouts and bounded difficulty |
 | Practice | Learn timing and earn internal resources | Includes a one-time active-practice tutorial reward |
 | Hunt | Deliver two keys and the gift to earn real USD | Three starts per account per day; at most one USD gift per day while a funded campaign is open |
 | Ranked | Compete using standardized equipment | Ten starts per day; the five best daily scores contribute to its weekly standings |
@@ -90,7 +94,7 @@ An arcade season lasts 28 days. Campaign and Endless victories award one to thre
 
 ## 17.6. Weekly Journey Race
 
-The Journey Race is separate from standardized Ranked play. It uses authenticated, server-confirmed Campaign results. For each player and stage, only the best eligible result of that week counts. Ranking compares total stars, distinct cleared stages, total spare seconds and the time at which those results were achieved.
+The Journey Race is separate from standardized Ranked play. It uses authenticated, server-confirmed Campaign results. For each player and stage, only the best eligible result of that week counts. Ranking compares total stars, distinct cleared stages, total spare seconds and the time at which those results were achieved. Spare seconds are recorded when you first complete the objective, even though you can continue mining until the countdown expires.
 
 The week starts on Monday at 00:00 UTC+7. A round belongs to the week in which the server started it. Results must be confirmed before 00:05 the following Monday to affect that closed week. Guest play, the test room, unsuccessful rounds and other modes do not enter this leaderboard.
 
