@@ -6,6 +6,12 @@ RVX Miner is a playable community arcade game built around short mining rounds, 
 
 The game can be tested independently. Version 17 supports a separate ledger for real USD Hunt rewards and funded daily budget limits, and lets you continue mining after completing a Campaign or Endless objective. RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Hunt opens only after a dated prize fund is allocated and its eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
 
+## Game walkthrough
+
+[Explore the RVX Miner game flow and visual explanation](https://notebooklm.link.google/0rBPwWqhZOhF). Use this companion walkthrough to picture the mining journey, progression and reward hunt. The rules and funded campaign terms below govern eligibility and real USD rewards.
+
+In brief: choose a mode and your equipment, mine within the round timer, deliver items to complete objectives, and use earned resources to progress. In Hunt, deliver two distinct keys, then bring the unlocked gift to the surface to qualify for a real USD reward of USD 0.05-10.00, subject to verification and available campaign funding.
+
 ## 17.1. The Core Game Loop
 
 Players choose an unlocked stage, one character and one tool, then enter a round lasting at most 60 seconds. The hook swings automatically; the player chooses when to release it. There is no aiming guide or automatic targeting. Rocks, bombs and selected objective items move to create timing challenges.
@@ -37,7 +43,7 @@ Completing the objective earns one star. Avoiding all bombs throughout the entir
 | Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds; keep mining after completing the objective |
 | Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; keep mining after completing the objective, with depth confirmed at round end; cycles the stage catalogue with new layouts and bounded difficulty |
 | Practice | Learn timing and earn internal resources | Includes a one-time active-practice tutorial reward |
-| Hunt | Deliver two keys and the gift to earn real USD | Three starts per account per day; at most one USD gift per day while a funded campaign is open |
+| Hunt | Deliver two keys and the gift to earn USD 0.05-10.00 in real rewards | Three starts per account per day; at most one USD gift per day while a funded campaign is open |
 | Ranked | Compete using standardized equipment | Ten starts per day; the five best daily scores contribute to its weekly standings |
 
 Campaign, Endless Mine and Practice allow limited pausing. Hunt and Ranked clocks continue when the player leaves the game view. Arcade day and week boundaries use UTC+7.
@@ -115,7 +121,7 @@ You have three Hunt starts per account per day and can earn at most one successf
 
 ### Gift values and probabilities
 
-The server randomly selects any whole-cent amount from USD 0.05 through USD 0.50, inclusive. All 46 values are possible, including USD 0.07, USD 0.13 and USD 0.46. These are probability bands, not five fixed denominations.
+The server randomly selects any whole-cent amount from USD 0.05 through USD 10.00, inclusive. All 996 values are possible, including USD 0.07, USD 0.13, USD 0.46 and USD 10.00. These are probability bands, not five fixed denominations.
 
 | Gift value range | Probability of the range |
 | --- | --- |
@@ -123,17 +129,17 @@ The server randomly selects any whole-cent amount from USD 0.05 through USD 0.50
 | USD 0.11-0.20 | 7% |
 | USD 0.21-0.30 | 2% |
 | USD 0.31-0.40 | 0.8% |
-| USD 0.41-0.50 | 0.2% |
+| USD 0.41-10.00 | 0.2% |
 
-Each individual cent value within a band has equal probability. The individual USD 0.50 outcome therefore has a 0.02% probability. The theoretical mean is USD 0.0872 per successful gift. These percentages describe the value of an earned gift, not the probability of winning a round or receiving an easy layout. Character levels, tools, workshop upgrades, titles and referrals do not increase gift values or these probabilities.
+Each individual cent value within a band has equal probability. Small rewards remain the most common: 90% of successful gifts fall between USD 0.05 and USD 0.10. The rare USD 0.41-10.00 band contains 960 possible cent values. The individual USD 10.00 outcome therefore has an approximately 0.0002083% probability per successful gift. The theoretical mean is USD 0.0967 per successful gift. These percentages describe the value of an earned gift, not the probability of winning a round or receiving an easy layout. Character levels, tools, workshop upgrades, titles and referrals do not increase gift values or these probabilities.
 
 ### Daily prize budget
 
 The initial planned prize allocation is USD 50 per day. RAVIXO can raise it to USD 100 per day after allocating the additional funds. The funded amount is a cap on prize obligations, not a fixed number of boxes or a promise that the full budget will be distributed each day. Payment-provider costs, if applicable, must be disclosed separately in the campaign terms.
 
-Four cumulative budget releases open at 00:00, 06:00, 12:00 and 18:00 UTC+7: 25%, 50%, 75% and 100% of that day's funded prize budget. Before accepting a Hunt, the server reserves the maximum possible gift of USD 0.50 and privately samples its value. A confirmed win records only that value as earned USD and releases the unused reservation. A loss releases the entire USD 0.50 reservation.
+Four cumulative budget releases open at 00:00, 06:00, 12:00 and 18:00 UTC+7: 25%, 50%, 75% and 100% of that day's funded prize budget. Before accepting a Hunt, the server reserves the maximum possible gift of USD 10.00 and privately samples its value. A confirmed win records only that value as earned USD and releases the unused reservation. A loss releases the entire USD 10.00 reservation.
 
-A new Hunt does not start if its fund is unopened, closed or has less than USD 0.50 of released, uncommitted money available. A rejected start consumes no attempt. Existing accepted rounds settle against their original fund, and closing new entry does not cancel earned rewards. Reserving the maximum keeps all 46 gift values available at the stated probabilities; up to USD 0.49 may remain unused at the end of a day. Earned rewards plus active reservations cannot exceed the allocated budget.
+A new Hunt does not start if its fund is unopened, closed or has less than USD 10.00 of released, uncommitted money available. A rejected start consumes no attempt. Existing accepted rounds settle against their original fund, and closing new entry does not cancel earned rewards. Reserving the maximum keeps all 996 gift values available at the stated probabilities; up to USD 9.99 may remain unused at the end of a day. Earned rewards plus active reservations cannot exceed the allocated budget.
 
 ### Recording and payment
 
