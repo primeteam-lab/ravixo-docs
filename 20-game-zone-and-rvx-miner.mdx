@@ -10,7 +10,7 @@ The game can be tested independently. Version 17 supports a separate ledger for 
 
 [Explore the RVX Miner game flow and visual explanation](https://notebooklm.link.google/0rBPwWqhZOhF). Use this companion walkthrough to picture the mining journey, progression and reward hunt. The rules and funded campaign terms below govern eligibility and real USD rewards.
 
-In brief: choose a mode and your equipment, mine within the round timer, deliver items to complete objectives, and use earned resources to progress. In Hunt, deliver two distinct keys, then bring the unlocked gift to the surface to qualify for a real USD reward of USD 0.05-10.00, subject to verification and available campaign funding.
+In brief: choose a mode and your equipment, mine within the round timer, deliver items to complete objectives, and use earned resources to progress. In Hunt, deliver two distinct keys, then bring the unlocked gift to the surface to qualify for a real USD reward of USD 0.01-10.00, subject to verification and available campaign funding.
 
 ## 17.1. The Core Game Loop
 
@@ -43,7 +43,7 @@ Completing the objective earns one star. Avoiding all bombs throughout the entir
 | Campaign | Clear stages, earn stars and unlock regions | At most 60 seconds; keep mining after completing the objective |
 | Endless Mine | Complete successive objectives and preserve cleared depth | Opens after the first completed region; keep mining after completing the objective, with depth confirmed at round end; cycles the stage catalogue with new layouts and bounded difficulty |
 | Practice | Learn timing and earn internal resources | Includes a one-time active-practice tutorial reward |
-| Hunt | Deliver two keys and the gift to earn USD 0.05-10.00 in real rewards | Three starts per account per day; at most one USD gift per day while a funded campaign is open |
+| Hunt | Deliver two distinct keys and the unlocked chest to the surface to qualify for USD 0.01-10.00 in real rewards | One Hunt round per account every 60 minutes; up to 24 rounds and 24 successfully earned USD chests within a 24-hour period, subject to the cooldown, server verification and available prize funding. See Section 17.7 for the full rules. |
 | Ranked | Compete using standardized equipment | Ten starts per day; the five best daily scores contribute to its weekly standings |
 
 Campaign, Endless Mine and Practice allow limited pausing. Hunt and Ranked clocks continue when the player leaves the game view. Arcade day and week boundaries use UTC+7.
@@ -145,7 +145,9 @@ The daily prize fund is limited and released in four scheduled periods. New Hunt
 A rejected Hunt start does not activate the 60-minute cooldown.
 ## 17.8. Account Verification and Community Growth
 
-Guest progress and the quick test room are device-local demonstrations. Their sample resources and results cannot be imported into authenticated balances, community rankings or funded Hunt awards. Guests cannot enter real USD Hunt rounds. You must sign in and meet the campaign's published verification requirements to participate. The three-start and one-gift limits apply per account; verification across multiple controlled accounts requires RAVIXO identity integration. The test room previews progression and equipment without qualifying for a cash reward.
+Guest progress and the quick test room are device-local demonstrations. Their sample resources and results cannot be imported into authenticated balances, community rankings or funded Hunt awards. Guests cannot enter real USD Hunt rounds. You must sign in and meet the campaign's published verification requirements to participate. The test room previews progression and equipment without qualifying for a cash reward.
+
+Each account may start one Hunt round every 60 minutes, with up to 24 rounds within a 24-hour period while prize funding is available. Each successful, server-verified round can award one USD chest, for up to 24 earned chests within that period. Completing the two-key objective and delivering the unlocked chest before time expires are required for a reward. Failed rounds do not earn a chest; a rejected start does not activate the cooldown. Section 17.7 governs Hunt eligibility, chest values and prize fund availability. Verification across multiple controlled accounts requires RAVIXO identity integration.
 
 The authenticated game server determines layouts, time, collisions, objectives, scores, equipment costs and awards. Duplicate settlement and duplicate milestone claims do not create a second award. These controls reduce forged-result abuse; they do not guarantee that automated valid inputs or multiple controlled accounts will always be detected.
 
