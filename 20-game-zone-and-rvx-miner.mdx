@@ -4,7 +4,9 @@ title: "17. RVX Miner Community Arcade"
 
 RVX Miner is a playable community arcade game built around short mining rounds, persistent progression and verified competition. Its purpose is to give the RAVIXO community an accessible activity alongside market research, demo trading and learning. Arcade points and achievements are recorded separately from Earned RVX Allocations and on-chain RVX.
 
-The game can be tested independently. Version 17 supports a separate ledger for real USD Hunt rewards and funded daily budget limits, and lets you continue mining after completing a Campaign or Endless objective. RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Hunt opens only after a dated prize fund is allocated and its eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
+The game can be tested independently. Version 17 supports a separate ledger for real USD Hunt rewards and funded daily budget limits, and lets you continue mining after completing a Campaign or Endless objective. The planned weekly Top 70 program distributes USD 5,000 and 5,000 RVX. Game referrals use verified identity and 30/50-round milestones. Sections 17.6 and 17.8 define these programs.
+
+RVX ID integration, game-related referral attribution and automatic external payment processing remain implementation steps. Funded programs open only after their activation dates, reserved budgets, eligibility and payment terms are published. Availability in the main RAVIXO application will be identified separately.
 
 ## Game walkthrough
 
@@ -59,7 +61,7 @@ Campaign, Endless Mine and Practice allow limited pausing. Hunt and Ranked clock
 | Relics | First clears of fixed stages 2, 4, 7 and 10 in each region | Completes 18 collection sets containing 72 relic entries |
 | Season points and medals | Eligible Campaign and Endless victories | Unlocks current-season milestones and records long-term achievement |
 
-The base mining value is 10 Mine RVX per delivered RVX collectible. Equipment can improve internal earnings within a total 30% bonus cap. A delivered ore item containing a part awards one part. Mining, the tutorial and daily contracts share a daily allowance of 500 Mine RVX and three parts. Fixed first-clear, star-chest, completed-set, prestige, seasonal and weekly-race awards have separate allowances outside that mining cap.
+The base mining value is 10 Mine RVX per delivered RVX collectible. Equipment can improve internal earnings within a total 30% bonus cap. A delivered ore item containing a part awards one part. Mining, the tutorial and daily contracts share a daily allowance of 500 Mine RVX and three parts. Fixed first-clear, star-chest, completed-set, prestige and seasonal awards have separate allowances outside that mining cap. The weekly Top 70 program uses the separate USD and RVX reward records in Section 17.6.
 
 A first stage clear grants 20 Mine RVX; challenge stages 5 and 10 also grant one part. Region star chests at 6, 12, 18, 24 and 30 stars grant 40, 60, 80, 100 and 120 Mine RVX respectively, with 0, 1, 1, 1 and 2 parts. Completing a four-relic regional set grants 120 Mine RVX and two parts. These milestones are awarded once per eligible stage, chest or set.
 
@@ -98,20 +100,34 @@ The Legend threshold remains 180 stars even though the expanded map supports 540
 
 An arcade season lasts 28 days. Campaign and Endless victories award one to three season points according to stars, capped at 15 points per day. Current milestones at 10, 25 and 40 points grant 60, 100 and 200 Mine RVX, plus one, one and two parts. Reaching 40 points records a season medal. Equipment levels, relics, earned titles and medals persist when season points reset.
 
-## 17.6. Weekly Journey Race
+## 17.6. Weekly Journey Race and Top 70 rewards
 
 The Journey Race is separate from standardized Ranked play. It uses authenticated, server-confirmed Campaign results. For each player and stage, only the best eligible result of that week counts. Ranking compares total stars, distinct cleared stages, total spare seconds and the time at which those results were achieved. Spare seconds are recorded when you first complete the objective, even though you can continue mining until the countdown expires.
 
 The week starts on Monday at 00:00 UTC+7. A round belongs to the week in which the server started it. Results must be confirmed before 00:05 the following Monday to affect that closed week. Guest play, the test room, unsuccessful rounds and other modes do not enter this leaderboard.
 
-| Weekly position | Mine RVX per player | Parts per player |
-| --- | --- | --- |
-| 1 | 250 | 3 |
-| 2-3 | 180 | 2 |
-| 4-10 | 100 | 1 |
-| 11-20 | 50 | 0 |
+### Weekly reward distribution
 
-These awards total at most 1,810 Mine RVX and 14 parts per week if all 20 positions qualify. Eligible players claim once during the following week after the confirmation cutoff. No USD or transferable RVX is credited by this race. Journey Race awards do not use the separate Hunt prize fund.
+The planned weekly schedule covers 70 qualifying positions. Each amount below is the reward for one eligible player in that position or group.
+
+| Weekly position | Players | USD per player | RVX per player |
+| --- | --- | --- | --- |
+| Top 1 | 1 | 3,000 | 2,000 |
+| Top 2 | 1 | 1,000 | 1,000 |
+| Top 3 | 1 | 500 | 500 |
+| Top 4-10 | 7 | 40 | 100 |
+| Top 11-30 | 20 | 7 | 25 |
+| Top 31-50 | 20 | 3 | 10 |
+| Top 51-70 | 20 | 1 | 5 |
+| **Total per week** | **70** | **5,000 USD** | **5,000 RVX** |
+
+The full weekly distribution totals USD 5,000 and 5,000 RVX when all 70 positions qualify. Rewards require eligible, server-confirmed results and completed verification. Only one qualifying account per person is permitted. Eligible players claim once during the following week after the confirmation cutoff and verification, under the published settlement schedule.
+
+RVX in this table is recorded internally and cannot currently be withdrawn on-chain. RAVIXO will announce withdrawal availability when the RVX network is ready. These reward records are separate from Mine RVX used to unlock and upgrade game equipment.
+
+The opening week, reserved USD fund, verification window and payment arrangements must be announced before the program opens. This weekly fund is separate from the Hunt prize fund, Demo Trading prizes and platform referral rewards.
+
+Game referral points are recorded separately. The 30/50-round milestones in Section 17.8 do not automatically add to the Journey Race score or change its ranking formula.
 
 ## 17.7. Real USD rewards and funded campaign limits
 ### Hunt Rules & USD Chest Rewards
@@ -151,6 +167,25 @@ Each account may start one Hunt round every 60 minutes, with up to 24 rounds wit
 
 The authenticated game server determines layouts, time, collisions, objectives, scores, equipment costs and awards. Duplicate settlement and duplicate milestone claims do not create a second award. These controls reduce forged-result abuse; they do not guarantee that automated valid inputs or multiple controlled accounts will always be detected.
 
-Optional invitation and community challenges are planned to connect arcade participation with RAVIXO onboarding. They require RVX ID and referral-attribution integration before activation. A future Campaign may recognize verified multi-day arcade activity under its published QAU criteria; the current prototype does not automatically establish QAU D7, Live qualification or a referral commission.
+### Game referral verification
 
-The existing Referral and Creator framework continues to govern attribution and acquired-user awards. A single eligible acquisition must not be paid repeatedly through game invitations, Social Share and Creator attribution. Game participation alone does not generate collected Live platform fees. The current game does not require a referral to play, upgrade equipment or unlock its ordinary treasure objectives.
+The game referral program requires RVX ID and referral-attribution integration before activation. Once it opens, your referral record appears immediately after an invited person registers through your link. The record binds you as the referrer at registration and starts as **Pending verification**. Opening the link without registering does not create a registered referral.
+
+The progress view shows identity-verification status and valid-round progress, such as **KYC verified · 18/30 rounds**. The following milestones replace D7/D30 waiting periods for game referral points. They do not require activity on a minimum number of separate days.
+
+| Milestone | Verification requirements | Points for the referrer |
+| --- | --- | --- |
+| Registered | Referral owner bound at registration; verification pending | 0 |
+| 30 valid rounds | KYC verified for the invited person, unique identity, 30 valid server-confirmed rounds and account-quality checks passed | +10, once |
+| 50 valid rounds in total | Verified referral reaches 50 valid server-confirmed rounds, including the first 30; milestone approved | +5, once |
+| **Maximum per referral** | **Each milestone can be credited only once** | **15 points** |
+
+A valid round requires an authenticated account, real gameplay actions and a server-confirmed result. Winning is not required. A legitimate early finish can count when the server confirms it. Guest play, the quick test room, idle sessions and opening then quitting without a valid result do not count.
+
+One verified identity can qualify as one referral. Changing wallets or creating another account does not restart the milestones. RAVIXO credits each milestone in the week its verification is completed. These are referral points, not RVX rewards or automatic USD payments.
+
+If KYC or the round count is incomplete, the record remains pending while the invited person completes the requirements. A case needing additional checks moves to **Under review**, with a way to provide evidence or request review. An invalid result receives no points and shows the reason. Suspicious cases are not automatically treated as confirmed abuse.
+
+DEX wallet history can support risk review but does not automatically earn points. A shared network or device is a review signal, not sufficient evidence by itself to reject a person.
+
+The platform QAU and Live fee-commission rules in Section 10 remain separate. Game participation alone does not generate collected Live platform fees or a stablecoin fee commission. Referral, Social Share and Creator records must not repeatedly credit the same acquisition or game-referral milestone. The game does not require a referral to play, upgrade equipment or unlock its ordinary treasure objectives.
